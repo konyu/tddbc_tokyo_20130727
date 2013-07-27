@@ -7,6 +7,15 @@ describe VendingMachine do
 		context "お金を投入していないとき" do
 			it { vm.total.should == 0 }
 		end
+
+		context "10円と100円を投入したとき" do
+			before do
+				vm.insert 10
+				vm.insert 100
+			end
+
+			it { vm.total.should == 110 }
+		end
 	end
 
 	describe "お金を投入したら合計金額が増えること" do
@@ -38,15 +47,6 @@ describe VendingMachine do
 			expect {
 				vm.insert 1000
 			}.to change { vm.total }.by(1000)
-		end
-	end
-
-	describe "お金を複数回投入できること" do
-		it do
-			expect {
-				vm.insert 100
-				vm.insert 500
-			}.to change { vm.total }.by(600)
 		end
 	end
 end
