@@ -49,4 +49,17 @@ describe VendingMachine do
 			}.to change { vm.total }.by(1000)
 		end
 	end
+
+	describe "#refund" do
+		before do
+			vm.total = 10
+		end
+
+		it "全額払い戻されること" do
+			vm.refund.should == 10
+			vm.total.should == 0
+		end
+	end
 end
+
+
