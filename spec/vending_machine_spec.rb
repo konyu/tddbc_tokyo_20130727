@@ -10,8 +10,6 @@ describe VendingMachine do
 	end
 
 	describe "お金を投入したら合計金額が増えること" do
-		let(:vm) { VendingMachine.new }
-
 		it '10円を投入したら、合計金額が10円が増えること' do
 			expect {
 				vm.insert 10
@@ -44,7 +42,6 @@ describe VendingMachine do
 	end
 
 	describe "お金を複数回投入できること" do
-		let(:vm) { VendingMachine.new }
 		it do
 			expect {
 				vm.insert 100
@@ -52,5 +49,4 @@ describe VendingMachine do
 			}.to change { vm.total }.by(600)
 		end
 	end
-
 end
