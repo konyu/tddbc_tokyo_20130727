@@ -1,3 +1,3 @@
 tddbc_tokyo_20130727
 
-TDDBCでTDDでペアプロした結果
+TDDBC TokyoでTDDでペアプロした結果
